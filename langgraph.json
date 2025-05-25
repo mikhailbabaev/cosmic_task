@@ -1,0 +1,10 @@
+{
+  "dependencies": [
+    "langchain",
+    "langchain_ollama",
+    "./"
+  ],
+  "graphs": {
+    "main": "./main.py:graph"
+  }
+}

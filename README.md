@@ -1,40 +1,46 @@
-# О проекте
+# About project
+This project deploys a numerical model and connects a tool to get the current time.
+The model used is **llama3.2** from **Ollama**.
 
-В этом проекте развернута численная модель и подключён инструмент для определения текущего времени.  
-В качестве модели используется **llama3.2** из Ollama.
+The **LangChain** framework is used to work with the local model.
+Specifically, an agent of type `ZERO_SHOT_REACT_DESCRIPTION` is applied, which can call the `get_current_time` tool when asked about the time.
 
-Для работы с локальной моделью использован фреймворк **LangChain**.  
-В частности, применён агент типа `ZERO_SHOT_REACT_DESCRIPTION`, который умеет вызывать инструмент `get_current_time` при запросах времени.
-
-Модель не идеальна и даёт правильный ответ на вопрос **What time is it?** примерно в одном из трёх-четырёх случаев.
+The model is not perfect and gives the correct answer to the question **What time is it?** roughly one time out of three to four attempts.
 
 ---
 
-# Установка и запуск
-Для корректной работы выполните следующие шаги:
+# Installation and launch
+To run correctly, please follow these steps:
 
-1. **Установите Ollama**
+1. **Install Ollama**
 
-Если у вас отсутствует Ollama
-Перейдите на официальный сайт Ollama и скачайте приложение под вашу ОС.
+If you don't have Ollama installed,
+go to the official Ollama website and download the application for your OS.
 
-2. **Загрузите модель llama3.2**
+2. **Pull the llama3.2 model**
 
-В терминале выполните команду:
+Run the following command in your terminal:
 ```bash
 ollama pull llama3.2
 ```
 
-3. **Клонируйте репозиторий и установите зависимости**
+3. **Clone the repository and install dependencies**
 ```bash
-git clone <your_repo>
-cd <your_repo>
+git clone https://github.com/mikhailbabaev/cosmic_task.git
+cd cosmic_task
 python -m venv .venv
-source .venv/bin/activate   # для Windows: .venv\Scripts\activate
+source .venv/bin/activate   # for Windows: .venv\Scripts\activate
 pip install -r requirements.txt
 ```
 
-4. **Запустите проект**
+4. **Run project**
 ```bash
 langgraph dev
+```
+
+# p.s
+
+You can run script in terminal to Local testing without langsmith
+```bash
+python main.py
 ```
